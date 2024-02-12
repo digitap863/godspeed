@@ -1,0 +1,15 @@
+* {
+      box-sizing: border-box;
+}
+
+html {
+      scroll-behavior: smooth;
+}
+body {
+      font-family: 'Nunito', sans-serif;
+      background-color: #ffffff;
+}
+
+.godspeed-heading {
+      font-family: 'Rubik', sans-serif;
+}
