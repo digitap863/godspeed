@@ -28,12 +28,12 @@
             <h6 class="uppercase text-[#733881] godspeed-heading font-medium">Immigration & Study Abroad</h6>
       </nav>
 
-      <div class="relative isolate overflow-hidden bg-[#707070] py-44 h-[85vh]">
-            <video autoplay muted loop id="myVideo" class="w-full h-full object-cover absolute top-0 left-0 z-0 hidden md:block">
+      <div class="relative isolate overflow-hidden bg-[#707070] py-44 h-[85vh] md:hidden">
+            <!-- <video autoplay muted loop id="myVideo" class="w-full h-full object-cover absolute top-0 left-0 z-0 hidden md:block">
                 <source src="video/vid-1.mp4" type="video/mp4">
-            </video>
+            </video> -->
 
-            <video autoplay muted loop id="myVideo" class="w-full h-full object-cover absolute top-0 left-0 z-0 md:hidden block">
+            <video autoplay muted loop id="myVideoMobile" class="w-full h-full object-cover absolute top-0 left-0 z-0">
                   <source src="video/vid_mob.mp4" type="video/mp4">
             </video>
 
@@ -61,6 +61,21 @@
             </div> -->
             
         </div>
+
+        <div class="relative isolate overflow-hidden bg-[#707070] py-44 h-[85vh] hidden md:block">
+            <video autoplay muted loop id="myVideoDesk" class="w-full h-full object-cover absolute top-0 left-0 z-0 hidden md:block">
+                <source src="video/vid-1.mp4" type="video/mp4">
+            </video>
+
+            <button class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#f2ae2e] p-4 rounded-full" onclick="toggleVideo()">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-play-filled" width="22" height="22" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z" stroke-width="0" fill="#fff" />
+                  </svg>
+            </button>
+            
+        </div>
+
 
         <div class="w-full flex justify-center items-center bg-[#f2ae2e] py-4 sm:hidden">
             <div class="w-1/2 text-center">
@@ -218,11 +233,10 @@
       </div>
 
       <script src="https://cdn.tailwindcss.com"></script>
-      <script>
+      <!-- <script>
             function toggleSound() {
               var video = document.getElementById("myVideo");
           
-              // Toggle the muted state
               video.muted = !video.muted;
           
               // If sound is unmuted, play the video
@@ -230,7 +244,36 @@
                 video.play();
               }
             }
-      </script>
+      </script> -->
+
+      <script>
+            function toggleSound() {
+                var videoMobile = document.getElementById("myVideoMobile");
+      
+                // Toggle play and pause for mobile video
+                if (videoMobile.paused) {
+                    videoMobile.muted = false; // Unmute when playing
+                    videoMobile.play();
+                } else {
+                    videoMobile.muted = true; // Mute when paused
+                    videoMobile.pause();
+                }
+            }
+
+            function toggleVideo() {
+
+            var videoDesktop = document.getElementById("myVideoDesk");
+
+            if (videoDesktop.paused) {
+                  videoDesktop.muted = false; // Unmute when playing
+                  videoDesktop.play();
+              } else {
+                  videoDesktop.muted = true; // Mute when paused
+                  videoDesktop.pause();
+              }                  
+            }
+        </script>
+
 </body>
 
 </html>
