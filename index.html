@@ -38,10 +38,16 @@
             </video>
 
             <button class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#f2ae2e] p-4 rounded-full" onclick="toggleSound()">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-play-filled" width="22" height="22" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <svg xmlns="http://www.w3.org/2000/svg" id="playIcon1" class="icon icon-tabler icon-tabler-player-play-filled" width="22" height="22" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z" stroke-width="0" fill="#fff" />
                   </svg>
+
+                  <svg xmlns="http://www.w3.org/2000/svg" id="pauseIcon1" class="icon icon-tabler icon-tabler-player-pause hidden" width="22" height="22" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <rect x="6" y="5" width="4" height="14" rx="1" />
+                        <rect x="14" y="5" width="4" height="14" rx="1" />
+                  </svg>                  
             </button>
             <!-- <div class="mx-auto max-w-7xl px-6 lg:px-8 flex justify-end relative z-10 max-sm:hidden">
                 <div class="lg:w-1/2 text-white">
@@ -68,10 +74,15 @@
             </video>
 
             <button class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#f2ae2e] p-4 rounded-full" onclick="toggleVideo()">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-play-filled" width="22" height="22" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <svg xmlns="http://www.w3.org/2000/svg" id="playIcon2" class="icon icon-tabler icon-tabler-player-play-filled" width="22" height="22" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z" stroke-width="0" fill="#fff" />
                   </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" id="pauseIcon2" class="icon icon-tabler icon-tabler-player-pause hidden" width="22" height="22" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <rect x="6" y="5" width="4" height="14" rx="1" />
+                        <rect x="14" y="5" width="4" height="14" rx="1" />
+                  </svg> 
             </button>
             
         </div>
@@ -249,27 +260,43 @@
       <script>
             function toggleSound() {
                 var videoMobile = document.getElementById("myVideoMobile");
-      
+                   var playIcon = document.getElementById("playIcon1");
+                   var pauseIcon = document.getElementById("pauseIcon1");
+
                 // Toggle play and pause for mobile video
                 if (videoMobile.paused) {
                     videoMobile.muted = false; // Unmute when playing
                     videoMobile.play();
+
+                    playIcon.style.display = "none";
+                    pauseIcon.style.display = "block";
                 } else {
                     videoMobile.muted = true; // Mute when paused
                     videoMobile.pause();
+
+                    playIcon.style.display = "block";
+                    pauseIcon.style.display = "none";
                 }
             }
 
             function toggleVideo() {
 
             var videoDesktop = document.getElementById("myVideoDesk");
-
+                var playIcon2 = document.getElementById("playIcon2");
+                var pauseIcon2 = document.getElementById("pauseIcon2");
             if (videoDesktop.paused) {
                   videoDesktop.muted = false; // Unmute when playing
                   videoDesktop.play();
+
+                  playIcon2.style.display = "none";
+                  pauseIcon2.style.display = "block";
+
               } else {
                   videoDesktop.muted = true; // Mute when paused
                   videoDesktop.pause();
+                  
+                  playIcon2.style.display = "block";
+                  pauseIcon2.style.display = "none";
               }                  
             }
         </script>
