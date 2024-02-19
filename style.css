@@ -13,3 +13,15 @@ body {
 .godspeed-heading {
       font-family: 'Rubik', sans-serif;
 }
+
+@media (max-width:400px) {
+      #mobile-video {
+            height: 72vh;
+      }
+}
+
+@media (min-width:540px) and (max-width:768px) {
+      #mobile-video {
+            height: 100%;
+      }
+}
