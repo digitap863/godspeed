@@ -24,13 +24,19 @@ body {
       }
 }
 
+@media (max-width:340px) {
+      #mobile-video {
+            height: 62vh;
+      }
+}
+
 @media (min-width:540px) and (max-width:768px) {
       #mobile-video {
             height: 100%;
       }
 }
 
-@media (max-width:480px) {
+@media (max-width:400px) {
       #mobile-video video {
             object-fit: contain;
       }
