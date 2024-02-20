@@ -14,14 +14,24 @@ body {
       font-family: 'Rubik', sans-serif;
 }
 
+      #mobile-video video {
+      object-fit: cover;
+      }
+
 @media (max-width:400px) {
       #mobile-video {
-            height: 72vh;
+            height: 65vh;
       }
 }
 
 @media (min-width:540px) and (max-width:768px) {
       #mobile-video {
             height: 100%;
+      }
+}
+
+@media (max-width:480px) {
+      #mobile-video video {
+            object-fit: contain;
       }
 }
